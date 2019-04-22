@@ -27,12 +27,12 @@ public class MoodFragment extends Fragment {
                 "Android Example List View"
         };
 
-        ListView listView = (ListView)view.findViewById(R.id.mood_list);
+        ListView listView = (ListView)view.findViewById(R.id.data_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, values);
         listView.setAdapter(adapter);
 
         FloatingActionButton floatingActionButton =
-                (FloatingActionButton) view.findViewById(R.id.floating_action_button);
+                (FloatingActionButton) view.findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".diary.DrugActivity"/>
+        <activity android:name=".report.PdfViewerActivity" />
+        <activity android:name=".report.ReportActivity" />
+        <activity android:name=".diary.DrugActivity" />
         <activity android:name=".diary.EventActivity" />
         <activity android:name=".diary.MoodActivity" />
         <activity android:name=".diary.DiaryActivity" />
