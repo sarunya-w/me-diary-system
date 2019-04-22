@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".scanner.ScannerActivity"></activity>
+        <activity android:name=".report.QrCodeSyncActivity" />
+        <activity android:name=".report.QrCodeActivity" />
         <activity android:name=".report.PdfViewerActivity" />
         <activity android:name=".report.ReportActivity" />
         <activity android:name=".diary.DrugActivity" />
