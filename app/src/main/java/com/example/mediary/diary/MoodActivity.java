@@ -12,14 +12,15 @@ public class MoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mood);
+        setContentView(R.layout.fragment_mood);
 
         FloatingActionButton floatingActionButton =
-                (FloatingActionButton) findViewById(R.id.floating_action_button);
+                (FloatingActionButton) findViewById(R.id.floating_action_button1);
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // Handle the click.
             }
         });
