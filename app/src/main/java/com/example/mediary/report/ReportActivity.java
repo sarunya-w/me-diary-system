@@ -30,9 +30,9 @@ public class ReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+        currentActivity = this;
 //        ViewPager viewPager = (ViewPager) findViewById(R.id.main_tab_content2);
 //        setupViewPager(viewPager);
-        currentActivity = this;
         ListView listView = (ListView) findViewById(R.id.data_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
