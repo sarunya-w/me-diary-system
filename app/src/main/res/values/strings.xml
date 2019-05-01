@@ -49,4 +49,14 @@
     <string name="title_mood">Mood</string>
     <string name="title_event">Event</string>
     <string name="title_drug">Drug</string>
+
+    <string name="lbl_name">Title</string>
+    <string name="lbl_des">Description</string>
+
+    <string name="ok_label">OK</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clear_all_label">Clear all</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+
 </resources>

@@ -4,6 +4,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.mediary.R;
 
@@ -15,12 +17,10 @@ public class MoodActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_mood);
 
         FloatingActionButton floatingActionButton =
-                (FloatingActionButton) findViewById(R.id.floating_action_button1);
-
+                (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 // Handle the click.
             }
         });

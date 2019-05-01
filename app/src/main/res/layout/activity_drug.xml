@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".diary.DrugActivity">
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context=".diary.DrugActivity">-->
 
-</android.support.constraint.ConstraintLayout>
+<!--<ListView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/list_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+<!--&lt;!&ndash;<android.support.design.widget.FloatingActionButton&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/fab"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_alignParentBottom="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="bottom|right"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_margin="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:srcCompat="@drawable/ic_done_white"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_anchor="@id/data_list"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_anchorGravity="bottom|right|end"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:backgroundTint="#ff1da1f2"/>&ndash;&gt;-->
+
+<!--</RelativeLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/lvUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+    </ListView>
+
+</RelativeLayout>
