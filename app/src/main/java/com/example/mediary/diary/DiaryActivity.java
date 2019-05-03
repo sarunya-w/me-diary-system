@@ -16,11 +16,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mediary.R;
 import com.example.mediary.diary.fragments.DrugFragment;
 import com.example.mediary.diary.fragments.EventFragment;
 import com.example.mediary.diary.fragments.MoodFragment;
+import com.example.mediary.libs.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -101,6 +103,8 @@ public class DiaryActivity extends AppCompatActivity {
 //            }
 //        });
 
+        String sessionId= getIntent().getStringExtra("DATE");
+        Toast.makeText(getApplicationContext(),"**** "+ sessionId, Toast.LENGTH_SHORT).show();
 
 
         int[] icons = {R.drawable.ic_mood,
@@ -116,7 +120,7 @@ public class DiaryActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         ViewPager viewPager = (ViewPager) findViewById(R.id.main_tab_content);
 
-        setupViewPager(viewPager);
+        setupViewPager(viewPager, sessionId);
 
         tabLayout.setupWithViewPager(viewPager);
 
@@ -128,59 +132,41 @@ public class DiaryActivity extends AppCompatActivity {
     }
 
 
-    private void setupViewPager(ViewPager viewPager) {
+    private void setupViewPager(ViewPager viewPager, String date) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-//        adapter.insertNewFragment(new MoodFragment());
-//        adapter.insertNewFragment(new EventFragment());
-//        adapter.insertNewFragment(new DrugFragment());
-
-        DynamicFragment mood_fragment = new DynamicFragment();
-        Bundle m_bundle = new Bundle();
-        m_bundle.putInt("KEY", R.string.title_mood);
-        mood_fragment.setArguments(m_bundle);
-        adapter.insertNewFragment(mood_fragment);
-
-        DynamicFragment event_fragment = new DynamicFragment();
-        Bundle e_bundle = new Bundle();
-        e_bundle.putInt("KEY", R.string.title_event);
-        event_fragment.setArguments(e_bundle);
-        adapter.insertNewFragment(event_fragment);
-
-        DynamicFragment drug_fragment = new DynamicFragment();
         Bundle d_bundle = new Bundle();
-        d_bundle.putInt("KEY", R.string.title_drug);
-        drug_fragment.setArguments(d_bundle);
-        adapter.insertNewFragment(drug_fragment);
+        d_bundle.putString("DATE",date);
+
+        MoodFragment moodFragment = new MoodFragment();
+        moodFragment.setArguments(d_bundle);
+
+        EventFragment eventFragment = new EventFragment();
+        eventFragment.setArguments(d_bundle);
+
+        adapter.insertNewFragment(moodFragment);
+        adapter.insertNewFragment(eventFragment);
+        adapter.insertNewFragment(new DrugFragment());
+
+
+//        DynamicFragment mood_fragment = new DynamicFragment();
+//        Bundle m_bundle = new Bundle();
+//        m_bundle.putInt("KEY", R.string.title_mood);
+//        mood_fragment.setArguments(m_bundle);
+//        adapter.insertNewFragment(mood_fragment);
+//
+//        DynamicFragment event_fragment = new DynamicFragment();
+//        Bundle e_bundle = new Bundle();
+//        e_bundle.putInt("KEY", R.string.title_event);
+//        event_fragment.setArguments(e_bundle);
+//        adapter.insertNewFragment(event_fragment);
+//
+//        DynamicFragment drug_fragment = new DynamicFragment();
+//        Bundle d_bundle = new Bundle();
+//        d_bundle.putInt("KEY", R.string.title_drug);
+//        drug_fragment.setArguments(d_bundle);
+//        adapter.insertNewFragment(drug_fragment);
 
         viewPager.setAdapter(adapter);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void insertNewFragment(Fragment fragment) {
-            mFragmentList.add(fragment);
-        }
-    }
-
-//    public static class DatePickerFragment extends PreferenceFragment {
-//        public void onCreate(Bundle savedInstanceState)
-//        {
-//            super.onCreate(savedInstanceState);
-//            addPreferencesFromResource(R.xml.preference_playback);
-//        }
-//    }
 }

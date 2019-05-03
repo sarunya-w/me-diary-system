@@ -1,28 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".diary.fragments.MoodFragment">
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/data_list"
+    <TextView
+        android:id="@+id/txtDate"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="40dp"
+        android:text="Date"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+
+    <SeekBar
+        android:id="@+id/moodiness"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:max="6"
+        android:progress="3" />
+
+    <SeekBar
+        android:id="@+id/anxiety"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:max="4"
+        android:progress="2" />
+
+    <SeekBar
+        android:id="@+id/irritability"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:max="4"
+        android:progress="2" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/sleeping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="นอนหลับ (ชั่วโมงต่อวัน)"
+            android:inputType="number"
+            android:text="8" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="น้ำหนัก (กิโลกรัม)"
+            android:inputType="number"
+            android:text="48" />
+    </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_add_white"
-        app:layout_anchor="@id/data_list"
+        app:backgroundTint="#ff1da1f2"
         app:layout_anchorGravity="bottom|right|end"
-        app:backgroundTint="#ff1da1f2"/>
+        app:srcCompat="@drawable/ic_done_white" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date" />
+
+</LinearLayout>

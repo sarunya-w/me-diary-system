@@ -10,10 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.mediary.MainActivity;
 import com.example.mediary.R;
-import com.example.mediary.ScannerActivity;
 
 import java.util.Calendar;
 
@@ -61,8 +60,14 @@ public class DatePickerActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), mDisplayDate.getText(), Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(DatePickerActivity.this, DiaryActivity.class);
-                startActivity(intent);
+                intent.putExtra("DATE", mDisplayDate.getText());
+//                int year = cal.get(Calendar.YEAR);
+//                int month = cal.get(Calendar.MONTH);
+//                int day = cal.get(Calendar.DAY_OF_MONTH);
+                startActivity(intent);;
             }
         });
     }

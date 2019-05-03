@@ -14,7 +14,7 @@ public class MoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_mood);
+        setContentView(R.layout.fragment_shared);
 
         FloatingActionButton floatingActionButton =
                 (FloatingActionButton) findViewById(R.id.fab);

@@ -54,7 +54,7 @@ public class EventActivity extends AppCompatActivity {
 //        };
 
         FloatingActionButton floatingActionButton =
-                (FloatingActionButton) findViewById(R.id.fabL);
+                (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

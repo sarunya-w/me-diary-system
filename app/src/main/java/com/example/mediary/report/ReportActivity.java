@@ -31,8 +31,6 @@ public class ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
         currentActivity = this;
-//        ViewPager viewPager = (ViewPager) findViewById(R.id.main_tab_content2);
-//        setupViewPager(viewPager);
         ListView listView = (ListView) findViewById(R.id.data_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
@@ -41,12 +39,10 @@ public class ReportActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(ReportActivity.this, list[position], Toast.LENGTH_SHORT).show();
-                //based on item add info to intent
-//                ItemClicked item = adapter.getItemAtPosition(position);
+
                 Intent intent = new Intent(currentActivity, PdfViewerActivity.class);
                 startActivity(intent);
-//                Fragment androidFragment = new PdfRendererFragment();
-//                replaceFragment(androidFragment);
+
             }
         });
     }

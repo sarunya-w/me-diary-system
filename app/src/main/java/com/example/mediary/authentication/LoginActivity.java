@@ -9,30 +9,17 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.HashMap;
 
 import com.example.mediary.CustomLocalStorage;
 import com.example.mediary.R;
-import com.example.mediary.ServerRestClient;
 import com.example.mediary.menu.MainMenuActivity;
-import com.example.mediary.model.User;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 //import cz.msebera.android.httpclient.Header;
 
