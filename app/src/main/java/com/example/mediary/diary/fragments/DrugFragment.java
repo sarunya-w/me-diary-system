@@ -35,7 +35,7 @@ public class DrugFragment extends Fragment {
             "ยาแก้ไอตรามะข้ามป้อม"
     };
 
-    boolean[] a_checked = new boolean[] { true, false, true, false,true, true };
+    boolean[] a_checked = new boolean[] { false, false, false, false,false, false };
 
     ArrayList<Integer> mUserItems = new ArrayList<>();
 
@@ -49,6 +49,14 @@ public class DrugFragment extends Fragment {
         view_disease = (TextView) view.findViewById(R.id.text_view_disease);
         view_drug_his = (TextView) view.findViewById(R.id.text_view_drug_his);
         view_drug_used = (TextView) view.findViewById(R.id.text_view_drug_used);
+
+        TextView vDate = (TextView) view.findViewById(R.id.txtDate);
+        String date = "";
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            date = bundle.getString("DATE");
+            vDate.setText(date);
+        }
 
         View btn_disease = (View) view.findViewById(R.id.text_disease);
         btn_disease.setOnClickListener(new View.OnClickListener() {

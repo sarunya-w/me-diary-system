@@ -32,6 +32,7 @@ public class EventFragment extends Fragment {
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_event, container, false);
         View view = inflater.inflate(R.layout.fragment_event, container, false);
+
         TextView vDate = (TextView) view.findViewById(R.id.txtDate);
         String date = "";
         Bundle bundle = this.getArguments();

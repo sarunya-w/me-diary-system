@@ -143,9 +143,12 @@ public class DiaryActivity extends AppCompatActivity {
         EventFragment eventFragment = new EventFragment();
         eventFragment.setArguments(d_bundle);
 
+        DrugFragment drugFragment = new DrugFragment();
+        drugFragment.setArguments(d_bundle);
+
         adapter.insertNewFragment(moodFragment);
         adapter.insertNewFragment(eventFragment);
-        adapter.insertNewFragment(new DrugFragment());
+        adapter.insertNewFragment(drugFragment);
 
 
 //        DynamicFragment mood_fragment = new DynamicFragment();

@@ -6,12 +6,15 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ServerRestClient  {
+public class ServerRestClientManager {
 
     private static final String BASE_URL = "http://10.0.2.2:3000/";
-    private static final String BASE_URL2 = "http://10.0.2.2:3000";
-    //private static final String BASE_URL = "http://192.168.2.117:5000/";
-    //private static final String BASE_URL = "http://172.30.11.233:5000/";
+    private static final String URL = "http://10.0.2.2:3000";
+    private static final String URL_t = "http://me-diary-demo-dev.ap-southeast-1.elasticbeanstalk.com/mediary-api/";
+
+
+
+    public static Retrofit retrofit;
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
@@ -27,7 +30,6 @@ public class ServerRestClient  {
         return BASE_URL + relativeUrl;
     }
 
-    public static Retrofit retrofit;
     /*
     This public static method will return Retrofit client
     anywhere in the appplication
@@ -39,11 +41,12 @@ public class ServerRestClient  {
         if (retrofit == null) {
             //Defining the Retrofit using Builder
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL2) //This is the only mandatory call on Builder object.
-                    .addConverterFactory(GsonConverterFactory.create()) // Convertor library used to convert response into POJO
+                    .baseUrl(URL)
+                    .addConverterFactory(GsonConverterFactory.create())
 //                    .client(httpClient.build())
                     .build();
         }
+
         return retrofit;
     }
 }

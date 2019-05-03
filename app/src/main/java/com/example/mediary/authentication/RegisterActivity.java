@@ -129,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity {
      * @param user
      */
     private void registerCall(RequestParams user) {
-//        ServerRestClient.post("register", user, new JsonHttpResponseHandler() {
+//        ServerRestClientManager.post("register", user, new JsonHttpResponseHandler() {
 //            @Override
 //            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 //                try{

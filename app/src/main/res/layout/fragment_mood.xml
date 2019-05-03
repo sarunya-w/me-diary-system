@@ -12,38 +12,102 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".diary.fragments.MoodFragment">
 
-    <TextView
-        android:id="@+id/txtDate"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Date"
-        android:textColor="#000000"
-        android:textSize="22sp" />
 
+        android:layout_height="wrap_content"
 
-    <SeekBar
-        android:id="@+id/moodiness"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:paddingTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="วันที่"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="227dp"
+                android:layout_height="wrap_content"
+                android:text="dd/mm/yyyy"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:max="6"
-        android:progress="3" />
 
-    <SeekBar
-        android:id="@+id/anxiety"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:max="4"
-        android:progress="2" />
+        android:layout_height="wrap_content"
 
-    <SeekBar
-        android:id="@+id/irritability"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="ภาวะทางอารมณ์"
+            android:textSize="15dp" />
+
+        <SeekBar
+            android:id="@+id/moodiness"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:max="6"
+            android:progress="3" />
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:max="4"
-        android:progress="2" />
+
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="ภาวะวิตกกังวล"
+            android:textSize="15dp" />
+
+        <SeekBar
+            android:id="@+id/anxiety"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:max="4"
+            android:progress="2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="หงุดหงิดง่าย"
+            android:textSize="15dp" />
+
+        <SeekBar
+            android:id="@+id/irritability"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:max="4"
+            android:progress="2" />
+    </RelativeLayout>
 
 
     <android.support.design.widget.TextInputLayout
@@ -54,9 +118,11 @@
             android:id="@+id/sleeping"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:hint="นอนหลับ (ชั่วโมงต่อวัน)"
             android:inputType="number"
-            android:text="8" />
+            android:text="8"
+            android:textSize="15dp" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -69,8 +135,11 @@
             android:layout_height="wrap_content"
             android:hint="น้ำหนัก (กิโลกรัม)"
             android:inputType="number"
-            android:text="48" />
+            android:text="48"
+            android:textSize="15dp" />
     </android.support.design.widget.TextInputLayout>
+
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -84,12 +153,5 @@
         app:backgroundTint="#ff1da1f2"
         app:layout_anchorGravity="bottom|right|end"
         app:srcCompat="@drawable/ic_done_white" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date" />
 
 </LinearLayout>

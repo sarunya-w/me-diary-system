@@ -159,7 +159,7 @@ public class LoginActivity extends AppCompatActivity {
 
         this.pin = password;
 
-//        ServerRestClient.post("login", user, new JsonHttpResponseHandler() {
+//        ServerRestClientManager.post("login", user, new JsonHttpResponseHandler() {
 //            @Override
 //            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 //                try{

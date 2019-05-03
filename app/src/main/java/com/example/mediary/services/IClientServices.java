@@ -10,6 +10,9 @@ import retrofit2.http.Path;
 
 public interface IClientServices {
 
+    @GET("/")
+    public Call<String> test();
+
     @GET("/login")
     public Call<String> goLogin();
 
