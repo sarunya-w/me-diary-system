@@ -82,9 +82,12 @@ public class EventFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getContext(), EventActivity.class);
+
+                intent.putExtra("title", list.get(position));
                 startActivity(intent);
             }
         });
+
 
         FloatingActionButton floatingActionButton =
                 (FloatingActionButton) view.findViewById(R.id.fab);
@@ -124,7 +127,6 @@ public class EventFragment extends Fragment {
                         for(int i = 0; i < events.length(); i++){
                             JSONObject e = (JSONObject) events.get(i);
                             list.add(e.get("title").toString() + "  ("+ convertDatetime(e.get("dateTime").toString()) + ")");
-
                         }
 
                         EventFragment.this.getActivity().runOnUiThread(new Runnable() {

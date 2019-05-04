@@ -30,11 +30,18 @@ public class EventActivity extends AppCompatActivity {
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
+    TextView name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("title");
+        name = (TextView) findViewById(R.id.name);
 //        getFromAsyncHttpClient();
+        name.setText(message);
 
         FloatingActionButton floatingActionButton =
                 (FloatingActionButton) findViewById(R.id.fab);
@@ -44,7 +51,7 @@ public class EventActivity extends AppCompatActivity {
 //                Intent intent = new Intent(getBaseContext(), DynamicFragment.class);
 //                startActivity(intent);
 
-                submitFormToAsyncHttpClient();
+//                submitFormToAsyncHttpClient();
 
                 //                Intent intent = new Intent(getBaseContext(), DynamicFragment.class);
 //                startActivity(intent);
