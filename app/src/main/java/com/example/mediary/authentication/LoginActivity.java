@@ -282,10 +282,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void onPostExecute(final Boolean success) {
-//        showProgress(false);
-
         if (success) {
-            //Start show pin activity
             Intent intent = new Intent(currentActivity, MainMenuActivity.class);
             startActivity(intent);
             currentActivity.finish();

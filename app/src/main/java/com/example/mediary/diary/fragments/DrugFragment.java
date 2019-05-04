@@ -26,7 +26,7 @@ public class DrugFragment extends Fragment {
     TextView view_drug_used;
 
 
-    String[] a_lists = new String[] {
+    String[] lists = new String[] {
             "ยาขับปัสสาวะ HCTZ 50 MG",
             "Enalapril 5 MG",
             "Glibenclamide 50 MG",
@@ -35,7 +35,7 @@ public class DrugFragment extends Fragment {
             "ยาแก้ไอตรามะข้ามป้อม"
     };
 
-    boolean[] a_checked = new boolean[] { false, false, false, false,false, false };
+    boolean[] a_checked = new boolean[] { false, false, false, false, false, false };
 
     ArrayList<Integer> mUserItems = new ArrayList<>();
 
@@ -62,7 +62,7 @@ public class DrugFragment extends Fragment {
         btn_disease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToOption();
+                getOptions();
             }
         });
 
@@ -78,7 +78,7 @@ public class DrugFragment extends Fragment {
         btn_drug_used.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToOption();
+                getOptions();
             }
         });
 
@@ -99,11 +99,9 @@ public class DrugFragment extends Fragment {
         return view;
     }
 
-    public void goToOption( ) {
-
-
+    public void getOptions( ) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
-        mBuilder.setMultiChoiceItems(a_lists, a_checked, new DialogInterface.OnMultiChoiceClickListener() {
+        mBuilder.setMultiChoiceItems(lists, a_checked, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int position, boolean isChecked) {
                 if(isChecked){
@@ -120,7 +118,7 @@ public class DrugFragment extends Fragment {
             public void onClick(DialogInterface dialogInterface, int which) {
                 String item = "";
                 for (int i = 0; i < mUserItems.size(); i++) {
-                    item = item + a_lists[mUserItems.get(i)];
+                    item = item + lists[mUserItems.get(i)];
                     if (i != mUserItems.size() - 1) {
                         item = item + ", ";
                     }

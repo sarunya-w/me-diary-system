@@ -104,7 +104,6 @@ public class DiaryActivity extends AppCompatActivity {
 //        });
 
         String sessionId= getIntent().getStringExtra("DATE");
-        Toast.makeText(getApplicationContext(),"**** "+ sessionId, Toast.LENGTH_SHORT).show();
 
 
         int[] icons = {R.drawable.ic_mood,

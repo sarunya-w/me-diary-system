@@ -1,7 +1,11 @@
 package com.example.mediary.services;
 
+import android.content.Context;
+
 import com.loopj.android.http.*;
 
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.HttpEntity;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -26,8 +30,12 @@ public class ServerRestClientManager {
         client.post(getAbsoluteUrl(url), params, responseHandler);
     }
 
+    public static void post(Context context, String url, Header[] headers, HttpEntity entity, String contentType, ResponseHandlerInterface responseHandler) {
+        client.post(context, url, headers,  entity,  contentType,  responseHandler);
+    }
+
     private static String getAbsoluteUrl(String relativeUrl) {
-        return BASE_URL + relativeUrl;
+        return URL_t + relativeUrl;
     }
 
     /*

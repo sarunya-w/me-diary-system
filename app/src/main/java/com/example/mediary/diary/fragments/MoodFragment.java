@@ -65,7 +65,7 @@ public class MoodFragment extends Fragment {
             public void onClick(View view) {
 
                 getFromAsyncHttpClient();
-//                summitFormToAsyncHttpClient(sleeping.getText().toString(), weight.getText().toString());
+//                submitFormToAsyncHttpClient(sleeping.getText().toString(), weight.getText().toString());
             }
         });
 //
@@ -114,7 +114,7 @@ public class MoodFragment extends Fragment {
         });
     }
 
-    private void summitFormToAsyncHttpClient(String sleeping, String weight) {
+    private void submitFormToAsyncHttpClient(String sleeping, String weight) {
         HashMap<String, String> mood_params = new HashMap<>();
 
         RequestParams postData = new RequestParams();
@@ -146,7 +146,7 @@ public class MoodFragment extends Fragment {
         });
     }
 
-    private void summitFormToRetrofit() {
+    private void submitFormToRetrofit() {
 
         //Obtain an instance of Retrofit by calling the static method.
         Retrofit retrofit = ServerRestClientManager.getRetrofitClient();

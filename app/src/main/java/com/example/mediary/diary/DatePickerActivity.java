@@ -60,7 +60,7 @@ public class DatePickerActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), mDisplayDate.getText(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), mDisplayDate.getText(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(DatePickerActivity.this, DiaryActivity.class);
                 intent.putExtra("DATE", mDisplayDate.getText());
